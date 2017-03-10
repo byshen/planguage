@@ -1,0 +1,8 @@
+Syntax:
+Type-checking:
+Evaluation rules:
+
+REPL: for debugging
+
+Shadowing:
+hidden value if changed.
