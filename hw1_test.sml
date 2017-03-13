@@ -62,3 +62,9 @@ val fun12_test1 = cumulative_sum([1,2,3]) = [1,3,6];
 val fun12_test2 = cumulative_sum([1,1,1]) = [1,2,3];
 val fun12_test3 = cumulative_sum([1,20,300]) = [1,21,321];
 
+(* challenge 13 is boring *)
+
+val fun14_test1 = reasonable_date((29,2,2000)) = true;
+val fun14_test2 = reasonable_date((29,2,1900)) = false;
+val fun14_test3 = reasonable_date((29,2,2004)) = true;
+val fun14_test4 = reasonable_date((13,3,2017)) = true;

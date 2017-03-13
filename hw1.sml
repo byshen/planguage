@@ -135,5 +135,39 @@ fun cumulative_sum(nums : int list) =
 	  help(nums, 0)
       end
 	  
-				     
+
+	  
+fun get_int_nth(strs : int list, n : int) =
+  if n = 1
+  then hd strs
+  else
+      get_int_nth(tl strs, n - 1)
+
+fun judge_leap(date:int*int*int) =
+   if (#3 date) mod 400 = 0
+   then true
+   else if (#3 date mod 4 = 0) andalso (#3 date mod 100 <> 0)
+   then true
+   else false
+
+fun reasonable_date(date : int*int*int) =
+  let val isleap = judge_leap(date)	    
+  in
+      let val months = if isleap then [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+		       else
+			   [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+      in
+	  if #2 date <= 12 andalso #2 date >= 1
+	  then 
+	      if #1 date >= 1 andalso #1 date <= get_int_nth(months, #2 date)
+	      then true
+	      else
+		  false
+	  else
+	      false  
+      end
+  end
+      
 		  
+						     
+						     
